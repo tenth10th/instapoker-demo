@@ -226,9 +226,24 @@ their Hand twice, or that the same card isn't in both Hands) - If so, raise
 a ValueError. That should pretty much take care of it?
 """,
 
-#18
+# 18
 """
-Nice work! You actually Crushed It! And you know what? I'm proud of us.
+Awesome, great stuff! Just one last thing, probably not a big deal, but
+we have this great ad campaign going out about playing poker with your
+friends, and in the picture there are, like, four or five people all
+sitting around a table with cards, sooooo...
+
+Could you maybe make score_poker_hands support more than two players?
+Like, as many as... possible? And keep the same output, except instead
+of just 0 for ties, and 1 or 2 for the winning hand, continue that to
+3, 4, 5... however many makes sense.
+
+I believe in you!
+""",
+
+#19
+"""
+Great work! You truly Crushed It! And you know what? I'm proud of us.
 
 I'm about to meet with Finance and our Venture Capital peeps about how the
 first day of Poker payouts have gone. Wish me luck!

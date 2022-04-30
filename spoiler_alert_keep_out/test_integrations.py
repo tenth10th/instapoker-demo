@@ -507,34 +507,6 @@ def test_straight_flush_hands(h1, h2, expected_result):
     validate_hand_result(h1, h2, expected_result)
 
 
-"""
-@pytest.mark.integration(min_level=16)
-@pytest.mark.parametrize("hands, expected_result", [
-    ( [ ['6H', 'JS', '2D', '3S', '9D'], ['QD', 'KH', '8S', '2S', 'AD'] ],
-        2),
-    ( [ ['6H', 'JS', '2D', '3S', '9D'], ['QD', 'KH', '8S', '2S', 'AD'],  ['QH', 'TS', '8C', '3C', 'JH'] ],
-        2),
-    ( [ ['6H', 'JS', '2D', '3S', '9D'], ['QD', 'KH', '8S', '2S', 'AD'],  ['QH', 'TS', '8C', '3C', 'JH'],  ['QS', 'TC', '9H', 'KC', '5D'] ],
-        2),
-    ( [ ['6H', 'JS', '2D', '3S', '9D'], ['QD', 'KH', '8S', '2S', 'AD'],  ['QH', 'TS', '8C', '3C', 'JH'],  ['QS', 'TC', '9H', 'KC', '5D'],  ['QC', '2H', '7H', '4D', '5H'] ],
-        2),
-    ( [ ['6H', 'JS', '2D', '3S', '9D'], ['QD', 'KH', '8S', '2S', 'AD'],  ['QH', 'TS', '8C', '3C', 'JH'],  ['QS', 'TC', '9H', 'KC', '5D'],  ['QC', '2H', '7H', '4D', '5H'],  ['4S', '3D', 'AS', '7S', '4H'] ],
-        6),
-    ( [ ['6H', 'JS', '2D', '3S', '9D'], ['QD', 'KH', '8S', '2S', 'AD'],  ['QH', 'TS', '8C', '3C', 'JH'],  ['QS', 'TC', '9H', 'KC', '5D'],  ['QC', '2H', '7H', '4D', '5H'],  ['4S', '3D', 'AS', '7S', '4H'],  ['5S', 'JC', '9C', '5C', 'KD'] ],
-        7),
-    ( [ ['6H', 'JS', '2D', '3S', '9D'], ['QD', 'KH', '8S', '2S', 'AD'],  ['QH', 'TS', '8C', '3C', 'JH'],  ['QS', 'TC', '9H', 'KC', '5D'],  ['QC', '2H', '7H', '4D', '5H'],  ['4S', '3D', 'AS', '7S', '4H'],  ['5S', 'JC', '9C', '5C', 'KD'],  ['TH', '2C', 'JD', '6S', 'TD'] ],
-        8),
-    ( [ ['6H', 'JS', '2D', '3S', '9D'], ['QD', 'KH', '8S', '2S', 'AD'],  ['QH', 'TS', '8C', '3C', 'JH'],  ['QS', 'TC', '9H', 'KC', '5D'],  ['QC', '2H', '7H', '4D', '5H'],  ['4S', '3D', 'AS', '7S', '4H'],  ['5S', 'JC', '9C', '5C', 'KD'],  ['TH', '2C', 'JD', '6S', 'TD'],  ['AH', '7D', 'KS', 'AC', '3H'] ],
-        9),
-    ( [ ['6H', 'JS', '2D', '3S', '9D'], ['QD', 'KH', '8S', '2S', 'AD'],  ['QH', 'TS', '8C', '3C', 'JH'],  ['QS', 'TC', '9H', 'KC', '5D'],  ['QC', '2H', '7H', '4D', '5H'],  ['4S', '3D', 'AS', '7S', '4H'],  ['5S', 'JC', '9C', '5C', 'KD'],  ['TH', '2C', 'JD', '6S', 'TD'],  ['AH', '7D', 'KS', 'AC', '3H'], ['8H', '6C', '6D', '9S', '7C'] ],
-        9),
-])
-def test_multi_hand_api(hands, expected_result):
-    result = score_poker_hands(*hands)
-    assert result == expected_result, f"Given multiple Hands: {hands} - Expected Hand #{expected_result} to win."
-"""
-
-
 ############################################
 ### Level 16: Handling Royal Flush Hands ###
 ############################################
@@ -575,3 +547,30 @@ def test_duplicate_cards(h1, h2, duplication):
             raise AssertionError(assertion_error)
     else:
         raise AssertionError(assertion_error)
+
+n_player_hands = [
+    ( [ '6H JS 2D 3S 9D',  'QD KH 8S 2S AD' ],
+        2),
+    ( [ '6H JS 2D 3S 9D',  'QD KH 8S 2S AD',   'QH TS 8C 3C JH' ],
+        2),
+    ( [  '6H JS 2D 3S 9D',  'QD KH 8S 2S AD',   'QH TS 8C 3C JH',   'QS TC 9H KC 5D' ],
+        2),
+    ( [  '6H JS 2D 3S 9D',  'QD KH 8S 2S AD',   'QH TS 8C 3C JH',   'QS TC 9H KC 5D',   'QC 2H 7H 4D 5H' ],
+        2),
+    ( [  '6H JS 2D 3S 9D',  'QD KH 8S 2S AD',   'QH TS 8C 3C JH',   'QS TC 9H KC 5D',   'QC 2H 7H 4D 5H',   '4S 3D AS 7S 4H' ],
+        6),
+    ( [  '6H JS 2D 3S 9D',  'QD KH 8S 2S AD',   'QH TS 8C 3C JH',   'QS TC 9H KC 5D',   'QC 2H 7H 4D 5H',   '4S 3D AS 7S 4H',   '5S JC 9C 5C KD' ],
+        7),
+    ( [  '6H JS 2D 3S 9D',  'QD KH 8S 2S AD',   'QH TS 8C 3C JH',   'QS TC 9H KC 5D',   'QC 2H 7H 4D 5H',   '4S 3D AS 7S 4H',   '5S JC 9C 5C KD',   'TH 2C JD 6S TD' ],
+        8),
+    ( [  '6H JS 2D 3S 9D',  'QD KH 8S 2S AD',   'QH TS 8C 3C JH',   'QS TC 9H KC 5D',   'QC 2H 7H 4D 5H',   '4S 3D AS 7S 4H',   '5S JC 9C 5C KD',   'TH 2C JD 6S TD',   'AH 7D KS AC 3H' ],
+        9),
+    ( [  '6H JS 2D 3S 9D',  'QD KH 8S 2S AD',   'QH TS 8C 3C JH',   'QS TC 9H KC 5D',   'QC 2H 7H 4D 5H',   '4S 3D AS 7S 4H',   '5S JC 9C 5C KD',   'TH 2C JD 6S TD',   'AH 7D KS AC 3H',  '8H 6C 6D 9S 7C' ],
+        9),
+]
+
+@pytest.mark.integration(min_level=18)
+@pytest.mark.parametrize("hands, expected_result", n_player_hands)
+def test_n_hands_api(hands, expected_result):
+    result = score_poker_hands(*hands)
+    assert result == expected_result, f"Given multiple Hands: {hands} - Expected Hand #{expected_result} to win."

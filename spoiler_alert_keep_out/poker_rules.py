@@ -20,7 +20,7 @@ Each hand will be a single card, for example, "2H" for Two of Hearts
         "text": """
 Each hand should be a single card, for example, "2H" for the Two of Hearts
     (Given invalid Ranks or Suits, raise a ValueError!)
-Return 1 if the first hand wins, or 2 if the second hand wins.
+Return 1 if the first hand wins, or 2 if the second hand wins...
 """,
     },
     {
