@@ -571,6 +571,6 @@ n_player_hands = [
 
 @pytest.mark.integration(min_level=18)
 @pytest.mark.parametrize("hands, expected_result", n_player_hands)
-def test_n_hands_api(hands, expected_result):
+def test_n_hand_games(hands, expected_result):
     result = score_poker_hands(*hands)
     assert result == expected_result, f"Given multiple Hands: {hands} - Expected Hand #{expected_result} to win."
