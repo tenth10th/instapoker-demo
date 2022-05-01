@@ -409,7 +409,7 @@ def test_three_of_a_kind_hands(h1, h2, expected_result):
     ("4C 6C 2D 5H 3S", "JC 7S 4H 7D 7H", 1),
     ("5C 7C 3C 6C 4C", "JC 7S 4H 7D 7H", 1),
     ("KC 6C KD 5H KS", "5S 9S 8S 6S 7S", 2),
-    ("4C 6C 2D 5H 3H", "2S 6S 5S 3S 4S", 0),
+    ("4C 6C 2D 5H 3H", "2S 6S 5S 3S 4D", 0),
 ])
 def test_straight_hands(h1, h2, expected_result):
     """
